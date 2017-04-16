@@ -52,6 +52,7 @@ services:
 
   postgres:
     image: postgres:9.5
+    container_name: "postgres"      
     environment:
       - POSTGRES_USER=cog
       - POSTGRES_PASSWORD=cog
@@ -61,6 +62,7 @@ services:
       file: docker-compose.common.yml
       service: common
     image: operable/cog:1.0
+    container_name: "cog"    
     environment:
       - COG_MQTT_HOST=0.0.0.0
       - DATABASE_URL=ecto://cog:cog@postgres:5432/cog
@@ -78,6 +80,7 @@ services:
       file: docker-compose.common.yml
       service: common
     image: operable/relay:1.0
+    container_name: "relay"      
     privileged: true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
