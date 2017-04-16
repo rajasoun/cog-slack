@@ -56,6 +56,8 @@ services:
     environment:
       - POSTGRES_USER=cog
       - POSTGRES_PASSWORD=cog
+    networks:
+      - cog  
 
   cog:
     extends:
@@ -76,6 +78,8 @@ services:
       - 4001:4001
       - 4002:4002
     entrypoint: /home/operable/cog/scripts/docker-start
+    networks:
+      - cog    
 
   relay:
     extends:
@@ -94,3 +98,9 @@ services:
     depends_on:
       - cog
     entrypoint: /usr/local/bin/relay
+    networks:
+      - cog
+
+networks:
+  cog:
+    driver: bridge    
