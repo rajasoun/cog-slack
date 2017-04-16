@@ -63,6 +63,8 @@ services:
       service: common
     image: operable/cog:1.0
     container_name: "cog"    
+    volumes:
+      - ./bundles:/bundles    
     environment:
       - COG_MQTT_HOST=0.0.0.0
       - DATABASE_URL=ecto://cog:cog@postgres:5432/cog

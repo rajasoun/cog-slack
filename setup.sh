@@ -13,3 +13,4 @@ docker-compose up -d
 
 docker-compose exec cog bash -c 'cogctl user create rajasoun  --first-name="Raja" --last-name="Soundaramourty" --email="rajasoun@icloud.com" --password="secret"'
 docker-compose exec cog bash -c 'cogctl chat-handle create rajasoun slack rajasoun'
+docker-compose exec cog bash -c 'cogctl group add cog-admin rajasoun'
