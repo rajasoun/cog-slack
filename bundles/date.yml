@@ -1,0 +1,12 @@
+---
+
+cog_bundle_version: 4
+
+name: date
+description: date
+version: "0.1"
+commands:
+   date:
+     executable: /bin/date
+     rules:
+        - "allow"
