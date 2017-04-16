@@ -15,14 +15,7 @@ docker-compose exec cog bash -c 'cogctl user create rajasoun  --first-name="Raja
 docker-compose exec cog bash -c 'cogctl chat-handle create rajasoun slack rajasoun'
 docker-compose exec cog bash -c 'cogctl group add cog-admin rajasoun'
 
+docker-compose exec cog bash -c 'cogctl bundle install /bundles/date.yml'
+docker-compose exec cog bash -c 'cogctl relay-group assign default date'
+docker-compose exec cog bash -c 'cogctl bundle enable date'
 
-# docker-compose exec cog bash -c 'cogctl relay create basic_relay bd03d7f0-b670-4721-9121-c23e62583e49 "secret"'
-# docker-compose exec cog bash -c 'cogctl relay enable basic_relay'
-
-# docker-compose exec cog bash -c 'cogctl relay-group create basic_relay_group basic_relay'
-# docker-compose exec cog bash -c 'cogctl relay-group add basic_relay_group basic_relay'
-
-
-# docker-compose exec cog bash -c 'cogctl bundle install /bundles/date.yml'
-# docker-compose exec cog bash -c 'cogctl relay-group assign basic_relay_group date'
-# docker-compose exec cog bash -c 'cogctl bundle enable date'
